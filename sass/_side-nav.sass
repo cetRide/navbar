@@ -1,0 +1,67 @@
+.sidenav
+  height: 100%
+  width: 0
+  position: fixed
+  z-index: 2
+  top: 80px
+  left: 0
+  background-color: #37b6ff
+  overflow-x: hidden
+  transition: 0.5s
+  padding-top: 40px
+
+  .close-button
+    position: absolute
+    top: 0
+    right: 25px
+    font-size: 36px
+    margin-left: 50px
+    color: white
+    text-decoration: none
+
+  .sidenav-content
+    a
+      padding: 8px 8px 8px 20px
+      text-decoration: none
+      font-size: 25px
+      color: white
+      display: block
+      transition: 0.3s
+
+  .navbar-items
+    display: none
+
+@media screen and (max-width: 450px)
+  .sidenav
+    padding-top: 15px
+
+    .sidenav-content
+      display: none
+
+    .navbar-items
+      display: block
+      list-style-type: none
+      font-size: 25px
+      color: white
+      padding: 8px 8px 8px 20px
+
+      li
+        text-align: center
+
+@media screen and (max-width: 768px)
+  .sidenav
+    padding-top: 15px
+
+    .sidenav-content
+      display: none
+
+    .navbar-items
+      display: block
+      list-style-type: none
+      font-size: 25px
+      color: white
+      padding: 8px 8px 8px 20px
+
+      li
+        text-align: center
+

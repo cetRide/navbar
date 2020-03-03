@@ -1,0 +1,139 @@
+%html
+  margin: 0
+  height: 100%
+
+body
+  @extend %html
+@import "side-nav"
+
+$primary: #37b6ff
+$success: #00c18a
+$danger: #ff4444
+$warning: #ffbb33
+
+$nav-lg: 80px
+$px-5: 30px
+
+//colors
+
+.primary-bg
+  background-color: $primary
+
+.success-bg
+  background-color: $success
+
+.warning-bg
+  background-color: $warning
+
+.danger-bg
+  background-color: $danger
+
+.white-bg
+  background-color: white
+
+.primary-color
+  color: $primary
+
+.success-color
+  color: $success
+
+.warning-color
+  color: $warning
+
+.white-color
+  color: white
+
+.danger-color
+  color: $danger
+
+//button
+.button
+  padding: 10px 20px 10px 20px
+  border: none
+  font-size: 20px
+  border-radius: 15px
+  outline: none
+  cursor: pointer
+
+.navigation-bar
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: space-between
+  color: $primary
+  margin: 0
+  height: $nav-lg
+
+  .top-left
+    align-items: center
+    margin: 0 $px-5 0 $px-5
+    padding: 0
+    display: flex
+    flex-direction: row
+
+  .nav-humburger
+    outline: none
+    cursor: pointer
+    height: 35px
+    width: 35px
+    border-radius: 50%
+    border: solid 1px $primary
+    font-size: 20px
+    display: table-cell
+    vertical-align: middle
+    align-items: center
+    text-align: center
+    line-height: 35px
+
+    &:hover
+      background-color: $primary
+      color: white
+      border: none
+
+
+  .nav-brand
+    padding-left: $px-5
+    font-size: 40px
+    text-align: center
+
+  .nav-item
+    display: flex
+    flex-direction: row
+    list-style-type: none
+    margin: 0
+    padding: 0
+
+    li
+      margin: 0 1rem
+      padding: 10px
+
+  .top-right
+    margin-right: $px-5
+
+@media screen and (max-width: 450px)
+  .top-right
+    display: none
+  .top-left
+    justify-content: space-between
+  .nav-brand
+    padding: 0
+
+@media screen and (max-width: 768px)
+  .top-right
+    display: none
+  .top-left
+    justify-content: space-between
+  .nav-brand
+    padding: 0
+
+.overlay
+  position: fixed
+  display: none
+  width: 100%
+  height: 100%
+  left: 0
+  right: 0
+  //bottom: 0
+  background-color: rgba(0, 0, 0, 0.5)
+  z-index: 1
+  cursor: pointer

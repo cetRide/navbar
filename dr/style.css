@@ -1,0 +1,236 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+/*arrange items in a row*/
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class*="wl-"] {
+    float: left;
+}
+/*responsiveness*/
+/* For mobile phones: */
+[class*="wl-"] {
+    width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .wd-1 {width: 8.33%;}
+    .wd-2 {width: 16.66%;}
+    .wd-3 {width: 25%;}
+    .wd-4 {width: 33.33%;}
+    .wd-5 {width: 41.66%;}
+    .wd-6 {width: 50%;}
+    .wd-7 {width: 58.33%;}
+    .wd-8 {width: 66.66%;}
+    .wd-9 {width: 75%;}
+    .wd-10 {width: 83.33%;}
+    .wd-11 {width: 91.66%;}
+    .wd-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .wl-1 {width: 8.33%;}
+    .wl-2 {width: 16.66%;}
+    .wl-3 {width: 25%;}
+    .wl-4 {width: 33.33%;}
+    .wl-5 {width: 41.66%;}
+    .wl-6 {width: 50%;}
+    .wl-7 {width: 58.33%;}
+    .wl-8 {width: 66.66%;}
+    .wl-9 {width: 75%;}
+    .wl-10 {width: 83.33%;}
+    .wl-11 {width: 91.66%;}
+    .wl-12 {width: 100%;}
+}
+h2 {
+    vertical-align: center;
+    text-align: center;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+* {
+    font-family: "Raleway";
+    box-sizing: border-box;
+}
+
+.top-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: #37b6ff;
+    padding: 1em;
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.2);
+    background-color: whitesmoke;
+    z-index: 1;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu > li {
+    margin: 0 1rem;
+    padding: 10px;
+
+}
+
+.menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-toggle {
+    display: none;
+
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+    background: #37b6ff;
+
+}
+
+.menu-button::before {
+    content: '';
+    margin-top: -8px;
+}
+
+.menu-button::after {
+    content: '';
+    margin-top: 8px;
+}
+
+.menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+    background: #37b6ff;
+}
+
+.menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+}
+
+.menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+    background: #37b6ff;
+
+}
+
+@media only screen and (min-width: 768px) {
+    .btn {
+        padding: 10px;
+        border-radius: 20px;
+        border: 1px solid #37b6ff;
+        cursor: pointer;
+        box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn:hover {
+        background-color: #00c18a;
+        border: 1px solid #00c18a;
+        color: white;
+    }
+
+}
+
+@media (max-width: 700px) {
+    .menu-button-container {
+        display: flex;
+    }
+
+    .menu {
+        position: absolute;
+        top: 0;
+        margin-top: 50px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu-toggle ~ .menu li {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+        background-color: #37b6ff;
+    }
+
+    .menu-toggle:checked ~ .menu li {
+        display: flex;
+        height: 2.5em;
+        padding: 0.5em;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .menu-item >li :checked >  ~ .menu li {
+        display: none;
+    }
+
+    .menu > li {
+        display: none;
+        justify-content: center;
+        margin: 0;
+        padding: 0.5em 0;
+        width: 100%;
+        color: white;
+        background-color: #222;
+    }
+
+}
+
+.card {
+    border-radius: 5px;
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: inherit;
+    height: 300px;
+}
+
+.dropdown {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    background-color: white;
+    height: 30%;
+    z-index: 1;
+    text-align: center;
+    width: 100%;
+}
+.container{
+    margin-left: 8.3%;
+    margin-right: 8.3%;
+}
+
+
+
